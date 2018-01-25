@@ -1,4 +1,6 @@
 node_modules/
 pulic/dist/
-
+.env.test
+.env.development
+yarn-error.log
 
