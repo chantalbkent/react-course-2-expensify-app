@@ -57,31 +57,36 @@ onSubmit = (e) => {
     render(){
      return (
         
-        <form onSubmit={this.onSubmit}>
-            {this.state.error && <p>{this.state.error}</p>}
+        <form className="form" onSubmit={this.onSubmit}>
+            {this.state.error && <p className="form__error">{this.state.error}</p>}
             <input 
-            type="text" 
-            placeholder="Description" 
-            value={this.state.description}
-            onChange={this.onDescriptionChange}
-            autoFocus />
+                className="text-input"
+                type="text" 
+                placeholder="Description" 
+                value={this.state.description}
+                onChange={this.onDescriptionChange}
+                autoFocus />
             <input 
-            type="text" 
-            placeholder="Amount"
-            value={this.state.amount} 
-            onChange={this.onAmountChange} />
+                className="text-input"
+                type="text" 
+                placeholder="Amount"
+                value={this.state.amount} 
+                onChange={this.onAmountChange} />
             <SingleDatePicker 
-            date={this.state.createdAt}
-            onDateChange={this.onDateChange}
-            focused={this.state.calendarFocused}
-            onFocusChange={this.onDateFocusChange}
-            numberOfMonths={1}
-            isOutsideRange={(day) => false}
+                date={this.state.createdAt}
+                onDateChange={this.onDateChange}
+                focused={this.state.calendarFocused}
+                onFocusChange={this.onDateFocusChange}
+                numberOfMonths={1}
+                isOutsideRange={(day) => false}
             />
             <textarea 
-            placeholder="Add note for your expense"
-            onChange={this.onNoteChange}></textarea>
-            <button>Add Expense</button>
+                className="textarea"
+                placeholder="Add note for your expense"
+                onChange={this.onNoteChange}></textarea>
+            <div>
+                <button className="button">Save</button>
+            </div>
         </form>
      )
  }   
